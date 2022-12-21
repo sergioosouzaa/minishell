@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/05/23 17:50:46 by thsousa           #+#    #+#             */
+/*   Updated: 2022/05/24 11:35:48 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-int main(int argc, char *argv[], char *envp[])
+t_list	*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del)(void *))
 {
-	char *line;
+	t_list	*new;
+	t_list	*temp;
 
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
+	if (lst && f)
 	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
+		new = ft_lstnew(f(lst->content));
+		temp = new;
+		while (lst->next)
+		{
+			lst = lst->next;
+			temp->next = ft_lstnew(f(lst->content));
+			if (!temp->next)
+			{	
+				ft_lstclear(&temp, del);
+				return (NULL);
+			}
+			temp = temp->next;
+		}	
+		return (new);
 	}
-	return (0);
+	return (NULL);
 }
-

@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/05/11 14:36:28 by thsousa           #+#    #+#             */
+/*   Updated: 2022/05/24 09:49:29 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-int main(int argc, char *argv[], char *envp[])
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *line;
+	size_t	i;
+	size_t	j;
+	char	*dest;
 
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
+	if (!s1 || !s2)
+		return (NULL);
+	dest = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	i = 0;
+	if (dest == NULL)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
+		dest[i] = s1[i];
+		i++;
 	}
-	return (0);
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		dest[i + j] = s2[j];
+		j++;
+	}
+	dest[i + j] = '\0';
+	return (dest);
 }
-
