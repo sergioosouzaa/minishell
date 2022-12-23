@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/05/19 10:04:38 by thsousa           #+#    #+#             */
+/*   Updated: 2022/05/19 10:19:13 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-int main(int argc, char *argv[], char *envp[])
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char *line;
+	size_t	i;
 
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
+	i = 0;
+	if (s && f)
 	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
+		while (s[i])
+		{
+			f(i, &s[i]);
+			i++;
+		}
 	}
-	return (0);
 }
-

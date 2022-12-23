@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/05/03 14:36:51 by thsousa           #+#    #+#             */
+/*   Updated: 2022/05/24 09:52:08 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "minishell.h"
-
-int main(int argc, char *argv[], char *envp[])
+int	ft_tolower(int c)
 {
-	char *line;
-
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
+	if (c >= 'A' && c <= 'Z')
 	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
+		c += 32;
 	}
-	return (0);
+	return (c);
 }
-

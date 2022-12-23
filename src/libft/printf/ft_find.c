@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_find.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/05/03 14:37:01 by thsousa           #+#    #+#             */
+/*   Updated: 2022/06/28 17:07:02 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "ft_printf.h"
 
-int main(int argc, char *argv[], char *envp[])
+char	*ft_find(const char *s, int c)
 {
-	char *line;
+	char	*str;
+	char	find;
+	int		i;
 
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
+	str = (char *) s;
+	find = (char) c;
+	i = 0;
+	while (*str != find)
 	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
+		if (*str == 0)
+			return (0);
+		str++;
 	}
-	return (0);
+	return (str);
 }
-

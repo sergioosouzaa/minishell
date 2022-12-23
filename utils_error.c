@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/07/28 16:44:08 by thsousa           #+#    #+#             */
+/*   Updated: 2022/12/20 11:21:10 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int main(int argc, char *argv[], char *envp[])
+void	error(char *arg)
 {
-	char *line;
-
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
-	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
-	}
-	return (0);
+	perror(arg);
+	exit(EXIT_FAILURE);
 }
 
+void	str_error(char *cmd)
+{
+	ft_putstr_fd("command not found:", 2);
+	ft_putstr_fd(cmd, 2);
+	ft_putstr_fd("\n", 2);
+	exit(EXIT_FAILURE);
+}

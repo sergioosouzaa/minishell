@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/05/03 14:36:45 by thsousa           #+#    #+#             */
+/*   Updated: 2022/05/24 09:52:22 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "minishell.h"
-
-int main(int argc, char *argv[], char *envp[])
+int	ft_toupper(int c)
 {
-	char *line;
-
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
+	if (c >= 'a' && c <= 'z')
 	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
+		c -= 32;
 	}
-	return (0);
+	return (c);
 }
-

@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/05/05 12:11:05 by thsousa           #+#    #+#             */
+/*   Updated: 2022/05/24 09:50:08 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "minishell.h"
+size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 
-int main(int argc, char *argv[], char *envp[])
 {
-	char *line;
+	unsigned int	i;
+	unsigned int	c;
 
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
+	i = 0;
+	c = ft_strlen(src);
+	if (dstsize == 0)
 	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
+		return (c);
 	}
-	return (0);
+	while (src[i] != '\0' && i < dstsize - 1)
+	{
+		(dest[i] = src[i]);
+		i++;
+	}
+	dest[i] = '\0';
+	return (c);
 }
-

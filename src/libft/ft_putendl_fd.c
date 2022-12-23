@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/05/19 11:33:10 by thsousa           #+#    #+#             */
+/*   Updated: 2022/05/19 11:43:37 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-int main(int argc, char *argv[], char *envp[])
+void	ft_putendl_fd(char *s, int fd)
 {
-	char *line;
-
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
+	if (s)
 	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
+		write(fd, &*s, ft_strlen(s));
 	}
-	return (0);
+	write(fd, "\n", 1);
 }
-

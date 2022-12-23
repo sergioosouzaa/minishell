@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/05/03 14:35:02 by thsousa           #+#    #+#             */
+/*   Updated: 2022/05/17 09:42:15 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "minishell.h"
-
-int main(int argc, char *argv[], char *envp[])
+void	*ft_memset(void *b, int c, size_t len)
 {
-	char *line;
+	char			*str;
+	unsigned char	a;
 
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
+	str = (char *)b;
+	a = (unsigned char)c;
+	while (len > 0)
 	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
+		str[len -1] = a;
+		len--;
 	}
-	return (0);
+	return (str);
 }
-

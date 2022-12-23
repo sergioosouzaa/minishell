@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/05/23 13:50:08 by thsousa           #+#    #+#             */
+/*   Updated: 2022/05/23 14:27:16 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-int main(int argc, char *argv[], char *envp[])
+t_list	*ft_lstlast(t_list *lst)
 {
-	char *line;
+	t_list	*temp;
 
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
-	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
-	}
-	return (0);
+	if (!lst)
+		return (NULL);
+	temp = lst;
+	while (temp->next != NULL)
+		temp = temp->next;
+	return (temp);
 }
-

@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/05/03 14:36:14 by thsousa           #+#    #+#             */
+/*   Updated: 2022/05/24 09:46:53 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-int main(int argc, char *argv[], char *envp[])
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char *line;
+	char	*str;
+	char	*dest;
 
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
+	str = (char *) src;
+	dest = (char *) dst;
+	if (!dst && !src)
+		return (0);
+	if (str < dest)
 	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
+		str += len;
+		dest += len;
+		while (len--)
+			*--dest = *--str;
 	}
-	return (0);
+	else
+	{
+		while (len--)
+			*dest++ = *str++;
+	}
+	return (dst);
 }
-

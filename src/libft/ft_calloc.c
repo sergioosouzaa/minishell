@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thsousa <thsousa@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 11:20:40 by thsousa           #+#    #+#             */
-/*   Updated: 2022/12/20 11:47:57 by thsousa          ###   ########.fr       */
+/*   Created: 2022/05/11 14:54:39 by thsousa           #+#    #+#             */
+/*   Updated: 2022/05/17 11:45:39 by thsousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
-int main(int argc, char *argv[], char *envp[])
+void	*ft_calloc(size_t count, size_t size)
 {
-	char *line;
+	void	*i;
+	size_t	tot;
 
-	(void) envp;
-	(void) argc;
-	(void) argv;
- 	while (1)
-	{
-		line = readline("minishell % ");
-		if (!line)
-			break ;
-		if (line && *line)
-    		add_history (line);
-		free(line);
+	if (count == 0 || size == 0)
+	{	
+		count = 1;
+		size = 1;
 	}
-	return (0);
+	tot = count * size;
+	if (tot / count != size)
+		return (0);
+	i = malloc(count * size);
+	if (i == 0)
+		return (0);
+	ft_bzero(i, count * size);
+	return (i);
 }
-
