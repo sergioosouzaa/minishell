@@ -1,6 +1,22 @@
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/80131514/228539969-ceb8c6ef-1d93-4ebb-bfda-c3aac19e972a.png" />
+</p>
+
 ## English
 
 The Minishell project from 42 is a command-line interpreter that replicates the basic functionalities of a shell. This project is part of the curriculum for 42's software engineering program and aims to improve students' knowledge of system calls and processes.
+
+## Project Description
+
+The project is to create a shell that is able to execute simple commands, handle environment variables, and redirections. It must support the following built-in commands:
+
+- echo with -n option
+- cd with only a relative or absolute path
+- pwd without any options
+- export without any options
+- unset without any options
+- env without any options
+- exit without any options
 
 ## Features
 
@@ -10,9 +26,9 @@ The Minishell project offers a variety of features, including:
 - Execution of basic commands such as `ls`, `echo`, `cd`, `env`, and `pwd`
 - Error handling with appropriate error messages
 - Inhibitors handling with `"` and `'`
-- Redirections handling with `>`, `>>`, `<`, and `|`
+- Redirections handling with `>`, `>>`, `<`, `<<`, and `|`
 - Environment variables handling with `$` and `?`
-- Signals handling with `ctrl-C`, `ctrl-D`, and `ctrl-\\`
+- Signals handling with `ctrl-C`, `ctrl-D`, and `ctrl-\`
 
 ## How to Use
 
@@ -28,6 +44,18 @@ The Minishell project from 42 is an excellent way for software engineering stude
 
 O projeto Minishell da 42 é um interpretador de linha de comando que replica as funcionalidades básicas de um shell. Este projeto faz parte do currículo do programa de engenharia de software da 42 e tem como objetivo aprimorar o conhecimento dos alunos em chamadas de sistema e processos.
 
+## Descrição do Projeto
+
+O projeto é criar um shell capaz de executar comandos simples, lidar com variáveis de ambiente e redirecionamentos. Ele deve suportar os seguintes comandos internos:
+
+- echo com a opção -n
+- cd com apenas um caminho relativo ou absoluto
+- pwd sem nenhuma opção
+- export sem nenhuma opção
+- unset sem nenhuma opção
+- env sem nenhuma opção
+- exit sem nenhuma opção
+
 ## Funcionalidades
 
 O projeto Minishell oferece uma variedade de recursos, incluindo:
@@ -36,9 +64,9 @@ O projeto Minishell oferece uma variedade de recursos, incluindo:
 - Execução de comandos básicos como `ls`, `echo`, `cd`, `env` e `pwd`
 - Manipulação de erros com mensagens de erro apropriadas
 - Manipulação de inibidores com `"` e `'`
-- Manipulação de redirecionamentos com `>`, `>>`, `<` e `|`
+- Manipulação de redirecionamentos com `>`, `>>`, `<`, `<<`, e `|`
 - Manipulação de variáveis de ambiente com `$` e `?`
-- Manipulação de sinais com `ctrl-C`, `ctrl-D` e `ctrl-\\\\`
+- Manipulação de sinais com `ctrl-C`, `ctrl-D` e `ctrl-\`
 
 ## Como Usar
 
