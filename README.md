@@ -2,7 +2,9 @@
   <img src="https://user-images.githubusercontent.com/80131514/228539969-ceb8c6ef-1d93-4ebb-bfda-c3aac19e972a.png" />
 </p>
 
+
 This project was developed with <a href="https://github.com/thaisfsousa">@thaisfsousa</a>
+
 ## English
 
 The Minishell project from 42 is a command-line interpreter that replicates the basic functionalities of a shell. This project is part of the curriculum for 42's software engineering program and aims to improve students' knowledge of system calls and processes.
