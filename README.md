@@ -1,7 +1,10 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/80131514/228539969-ceb8c6ef-1d93-4ebb-bfda-c3aac19e972a.png" />
+  <img src="https://user-images.githubusercontent.com/80131514/229181398-49b6a3f6-9b4f-480d-a587-a9fd33a112fe.gif" />
 </p>
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/80131514/228539969-ceb8c6ef-1d93-4ebb-bfda-c3aac19e972a.png" />
+</p>
 
 This project was developed with <a href="https://github.com/thaisfsousa">@thaisfsousa</a>
 
